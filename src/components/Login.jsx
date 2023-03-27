@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { signInAPI } from "../redux/actions";
 import { connect } from "react-redux";
@@ -6,26 +6,28 @@ import { useNavigate } from "react-router-dom";
 
 const Login = (props) => {
   const navigate = useNavigate();
+  useEffect(() => {
+    props.user && navigate("/home");
+  }, [props.user]);
   return (
     <Container>
-      {props.user && navigate("/home")}
       <Nav>
-        <a href="/">
-          <img src="/images/login-logo.svg" alt="login-logo" />
+        <a href="/index.html">
+          <img src="/images/login-logo.svg" alt="" />
         </a>
         <div>
           <Join>Join now</Join>
-          <SignIn>Sign In</SignIn>
+          <SignIn>Sign in</SignIn>
         </div>
       </Nav>
       <Section>
         <Hero>
-          <h1>Welcome to your professional communnity</h1>
-          <img src="/images/login-hero.svg" alt="logo-hero" />
+          <h1>Welcome to your professional community</h1>
+          <img src="/images/login-hero.svg" alt="" />
         </Hero>
         <Form>
           <Google onClick={() => props.signIn()}>
-            <img src="/images/google.svg" alt="google" />
+            <img src="/images/google.svg" alt="" />
             Sign in with Google
           </Google>
         </Form>
@@ -34,7 +36,7 @@ const Login = (props) => {
   );
 };
 const Container = styled.div`
-  padding: 0;
+  padding: 0px;
 `;
 const Nav = styled.nav`
   max-width: 1128px;

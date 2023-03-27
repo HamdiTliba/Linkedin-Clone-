@@ -91,7 +91,8 @@ const PostModal = (props) => {
                           display: "block",
                           marginBottom: "15px",
                         }}
-                        htmlFor="file">
+                        htmlFor="file"
+                      >
                         Select an image to share
                       </label>
                     </p>
@@ -134,7 +135,8 @@ const PostModal = (props) => {
               </ShareComment>
               <PostButton
                 onClick={(e) => handlePostArticles(e)}
-                disabled={!editorText ? true : false}>
+                disabled={!editorText ? true : false}
+              >
                 Post
               </PostButton>
             </ShareCreation>

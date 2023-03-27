@@ -1,21 +1,22 @@
 import React from "react";
-import { connect } from "react-redux";
 import styled from "styled-components";
+import { connect } from "react-redux";
 import { signOutAPI } from "../redux/actions";
+
 const Header = (props) => {
   return (
     <Container>
       <Content>
         <Logo>
           <a href="/home">
-            <img src="/images/home-logo.svg" alt="home-logo" />
+            <img src="/images/home-logo.svg" alt="" />
           </a>
         </Logo>
         <Search>
           <div>
             <input type="text" placeholder="Search" />
             <SearchIcon>
-              <img src="/images/search-icon.svg" alt="search-icon" />
+              <img src="/images/search-icon.svg" alt="" />
             </SearchIcon>
           </div>
         </Search>
@@ -23,35 +24,35 @@ const Header = (props) => {
           <NavListWrap>
             <NavList className="active">
               <a>
-                <img src="/images/nav-home.svg" alt="nav-home" />
+                <img src="/images/nav-home.svg" alt="" />
                 <span>Home</span>
               </a>
             </NavList>
             <NavList>
               <a>
-                <img src="/images/nav-network.svg" alt="nav-network" />
+                <img src="/images/nav-network.svg" alt="" />
+
                 <span>My Network</span>
               </a>
             </NavList>
             <NavList>
               <a>
-                <img src="/images/nav-jobs.svg" alt="nav-jobs" />
+                <img src="/images/nav-jobs.svg" alt="" />
+
                 <span>Jobs</span>
               </a>
             </NavList>
             <NavList>
               <a>
-                <img src="/images/nav-messaging.svg" alt="nav-messaging" />
+                <img src="/images/nav-messaging.svg" alt="" />
+
                 <span>Messaging</span>
               </a>
             </NavList>
             <NavList>
               <a>
-                <img
-                  src="/images/nav-notifications.svg"
-                  alt="nav-notifications"
-                />
-                <span>Notifiactions</span>
+                <img src="/images/nav-notifications.svg" alt="" />
+                <span>Notifications</span>
               </a>
             </NavList>
             <User>
@@ -59,12 +60,12 @@ const Header = (props) => {
                 {props.user && props.user.photoURL ? (
                   <img src={props.user.photoURL} />
                 ) : (
-                  <img src="/images/user.svg" alt="home-user" />
+                  <img src="/images/user.svg" alt="" />
                 )}
 
                 <span>
                   Me
-                  <img src="/images/down-icon.svg" alt="home-down-icon" />
+                  <img src="/images/down-icon.svg" alt="" />
                 </span>
               </a>
               <SignOut onClick={() => props.signOut()}>
@@ -74,10 +75,10 @@ const Header = (props) => {
             <Work>
               <a>
                 <img src="/images/nav-work.svg" alt="" />
-                <div>
+                <span>
                   Work
                   <img src="/images/down-icon.svg" alt="" />
-                </div>
+                </span>
               </a>
             </Work>
           </NavListWrap>
@@ -208,7 +209,7 @@ const NavList = styled.li`
     }
   }
 `;
-const SignOut = styled.li`
+const SignOut = styled(NavList)`
   position: absolute;
   top: 45px;
   background: white;
@@ -227,23 +228,23 @@ const SignOut = styled.li`
     background: #eee;
   }
 `;
-const User = styled.div`
-  margin: auto;
-  padding-left: 15px;
-  padding-right: 15px;
+const User = styled(NavList)`
   a > svg {
     width: 24px;
     border-radius: 50%;
   }
+
   a > img {
     width: 24px;
     height: 24px;
     border-radius: 50%;
   }
+
   span {
     display: flex;
     align-items: center;
   }
+
   &:hover {
     ${SignOut} {
       align-items: center;
@@ -253,11 +254,9 @@ const User = styled.div`
   }
 `;
 
-const Work = styled.div`
+const Work = styled(User)`
   border-left: 1px solid rgba(0, 0, 0, 0.08);
-  margin: auto;
-  padding-left: 20px;
-  margin: auto @media (max-width: 575px) {
+  @media (max-width: 575px) {
     display: none;
   }
 `;

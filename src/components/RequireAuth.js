@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 
 const RequireAuth = ({ user, children }) => {
   const navigate = useNavigate();
-
   useEffect(() => {
     if (!user) {
       navigate("/", { replace: true });
@@ -18,4 +17,5 @@ const mapStateToProps = (state) => {
     user: state.userState.user,
   };
 };
+
 export default connect(mapStateToProps)(RequireAuth);

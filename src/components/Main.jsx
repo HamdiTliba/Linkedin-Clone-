@@ -228,6 +228,7 @@ const SharedActor = styled.div`
     overflow: hidden;
     display: flex;
     text-decoration: none;
+
     img {
       width: 48px;
       height: 48px;
@@ -325,6 +326,7 @@ const SocialActions = styled.div`
     width: calc(100% / 4);
     height: 60px;
     justify-content: center;
+
     &:hover {
       background: rgba(0, 0, 0, 0.08);
     }

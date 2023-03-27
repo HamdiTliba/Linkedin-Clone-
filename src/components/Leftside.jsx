@@ -11,7 +11,7 @@ const Leftside = (props) => {
           <a>
             <Photo />
             <Link>
-              Welcome, {props.user ? props.user.displayName : "there"}
+              Welcome, {props.user ? props.user.displayName : "there!"}
             </Link>
           </a>
           <a>
@@ -120,9 +120,11 @@ const Widget = styled.div`
     justify-content: space-between;
     align-items: center;
     padding: 4px 12px;
+
     &:hover {
       background-color: rgba(0, 0, 0, 0.08);
     }
+
     div {
       display: flex;
       flex-direction: column;
@@ -139,6 +141,7 @@ const Widget = styled.div`
       }
     }
   }
+
   svg {
     color: rgba(0, 0, 0, 1);
   }
@@ -158,6 +161,7 @@ const Item = styled.a`
       color: rgba(0, 0, 0, 0.6);
     }
   }
+
   &:hover {
     background-color: rgba(0, 0, 0, 0.08);
   }
@@ -172,14 +176,17 @@ const CommunityCard = styled(ArtCard)`
     color: black;
     padding: 4px 12px 4px 12px;
     font-size: 12px;
+
     &:hover {
       color: #0a66c2;
     }
+
     span {
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
+
     &:last-child {
       color: rgba(0, 0, 0, 0.6);
       text-decoration: none;
@@ -191,6 +198,7 @@ const CommunityCard = styled(ArtCard)`
     }
   }
 `;
+
 const mapStateToProps = (state) => {
   return {
     user: state.userState.user,

@@ -11,7 +11,8 @@ const Home = () => {
           <a href="#">Hiring in a hurry? - </a>
         </h5>
         <p>
-          Find talented pros in record time with Upwork and feep business moving
+          Find talented pros in record time with Upwork and keep business
+          moving.
         </p>
       </Section>
       <Layout>
@@ -46,6 +47,7 @@ const Section = styled.section`
     color: #434649;
     font-weight: 600;
   }
+
   @media (max-width: 768px) {
     flex-direction: column;
     padding: 15px 5px;
@@ -63,5 +65,4 @@ const Layout = styled.div`
     padding: 0 5px;
   }
 `;
-
 export default Home;

@@ -1,5 +1,4 @@
 import { SET_USER } from "../actions/actionTypes";
-
 const initialState = {
   user: null,
 };
